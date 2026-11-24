@@ -1,0 +1,44 @@
+/* 흑표범 리그 (online) — extends game.css */
+body.league{--white:#eef0ea}
+.lead{font-size:14px;line-height:1.7;color:#c8d2c9;margin:0 0 18px}
+.field{display:grid;gap:6px;margin-bottom:12px;font-size:12px;color:var(--muted)}
+.field input,.me-pick select{width:100%;padding:13px 12px;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:500 16px var(--body)}
+.field input:focus,.me-pick select:focus{outline:2px solid var(--lime);outline-offset:1px}
+.join{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end;margin-top:18px}
+.join .field{margin:0}
+.ghost{padding:13px 16px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--ink);font-weight:700;font-size:15px}
+#entry .start{margin-top:4px}
+.share{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}
+.conn{font-size:12px;color:var(--muted)}.conn.ok{color:var(--lime)}.conn.bad{color:#ff8a6a}
+h1 .t1{color:var(--white)}
+.me-pick h2{font-size:14px;margin:0 0 8px;display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}
+.me-pick h2 small{font-weight:500;color:var(--muted);font-size:12px}
+.me-pick{margin-bottom:16px}
+/* seat picker: two team columns of positions */
+.pitch-pick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.team-col{border:1px solid var(--line);border-radius:12px;padding:10px;background:linear-gradient(180deg,#14201a,var(--panel))}
+.team-col h3{margin:0 0 8px;font:800 italic 18px var(--display);display:flex;justify-content:space-between;align-items:center}
+.team-col.t0 h3{color:var(--lime)}.team-col.t1 h3{color:var(--white)}
+.team-col h3 small{font:500 12px var(--body);color:var(--muted);font-style:normal}
+.seats{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.seat{width:100%;display:grid;grid-template-columns:48px 1fr;align-items:center;gap:8px;padding:9px 10px;border-radius:9px;border:1px dashed #34403a;background:transparent;text-align:left;min-height:44px}
+.seat em{font-style:normal;font-size:12px;font-weight:700;color:var(--muted)}
+.seat strong{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--muted);font-weight:500}
+.seat.taken{border-style:solid;border-color:#3b4a40;background:#18211b}
+.seat.taken strong{color:var(--ink);font-weight:700}
+.seat.mine{border-color:var(--lime);background:#1d2a14;box-shadow:inset 0 0 0 1px var(--lime)}
+.seat.mine em{color:var(--lime)}
+.seat.off strong::after{content:' · 연결 끊김';color:#ff8a6a;font-size:11px;font-weight:500}
+.seat:disabled{cursor:default}
+.hint{font-size:12px;color:var(--muted);margin:8px 0 6px}
+.spectators{font-size:12px;color:var(--muted);min-height:18px}
+.spectators b{color:var(--ink);font-weight:700}
+.host-badge{display:inline-block;margin-left:4px;padding:0 5px;border-radius:4px;background:var(--lime);color:#111;font:800 10px var(--body);vertical-align:1px}
+#host-options{grid-template-columns:1fr 1fr}
+#host-options.locked{opacity:.5;pointer-events:none}
+.scoreboard .away{border-right-color:var(--white)}
+.net{position:absolute;top:max(14px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));font:700 12px var(--display);color:var(--muted);background:rgba(10,13,11,.7);padding:3px 7px;border-radius:6px}
+.net.bad{color:#ff8a6a}
+.banner.concede{background:var(--white);color:#111}
+#result .final span{font-weight:700}
+@media(max-width:560px){.pitch-pick{grid-template-columns:1fr 1fr;gap:6px}.team-col{padding:7px}.seat{grid-template-columns:38px 1fr;padding:8px 7px}.seat strong{font-size:13px}#host-options{grid-template-columns:1fr}}

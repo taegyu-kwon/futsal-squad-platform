@@ -1,0 +1,6 @@
+MediaPipe Tasks Vision 1.2.2 — Google LLC, Apache License 2.0.
+Package: https://registry.npmjs.org/@mediapipe/tasks-vision/-/tasks-vision-1.2.2.tgz
+SelfieSegmenter (square, float16) model — Google, Apache License 2.0.
+Model: https://storage.googleapis.com/mediapipe-models/image_segmenter/selfie_segmenter/float16/latest/selfie_segmenter.tflite
+Documentation: https://developers.google.com/edge/mediapipe/solutions/vision/image_segmenter
+Downloaded 2026-11-08. Unmodified runtime and model; see LICENSE.

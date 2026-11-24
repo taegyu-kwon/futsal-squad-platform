@@ -1,0 +1,9 @@
+.git
+.sites-checkout
+node_modules
+.env*
+!.env.example
+backups
+migration-backups
+tests
+realtime/

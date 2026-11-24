@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no"><meta name="theme-color" content="#0b0f0c"><meta name="apple-mobile-web-app-capable" content="yes"><title>흑표범 리그</title>
+<meta property="og:title" content="흑표범 리그 · 온라인 풋살"><meta property="og:description" content="링크로 들어와 각자 자기 선수로 뛰는 5대5~7대7 풋살">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,800&family=Noto+Sans+KR:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="futsal/game.css?v=4"><link rel="stylesheet" href="futsal/league.css?v=2"></head>
+<body class="league">
+<div id="stage" aria-hidden="true"></div>
+
+<section id="entry" class="screen" aria-labelledby="entry-title">
+ <header class="lobby-head"><img class="emblem" src="assets/team-emblem.png" alt="" width="44" height="44"><div><p class="eyebrow">ONLINE FUTSAL · 5 TO 7 A SIDE</p><h1 id="entry-title">흑표범 리그</h1></div></header>
+ <p class="lead">방을 만들고 링크를 단톡방에 보내세요. 들어온 사람마다 자기 선수 하나를 맡고, 빈 자리는 컴퓨터가 뜁니다.</p>
+ <label class="field"><span>내 이름</span><input id="my-name" maxlength="12" autocomplete="nickname" placeholder="예: 홍길동"></label>
+ <button type="button" id="create" class="start">방 만들기</button>
+ <form id="join-form" class="join"><label class="field"><span>방 코드로 들어가기</span><input id="join-code" maxlength="5" autocapitalize="characters" autocomplete="off" placeholder="5자리 코드"></label><button type="submit" class="ghost">입장</button></form>
+ <p class="lobby-status" id="entry-status" role="status"></p>
+</section>
+
+<section id="room" class="screen" hidden aria-labelledby="room-title">
+ <header class="lobby-head"><a class="back" href="futsal-league.html" aria-label="방 나가기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg></a><img class="emblem" src="assets/team-emblem.png" alt="" width="44" height="44"><div><p class="eyebrow">흑표범 리그 · 방 <b id="room-code">-----</b></p><h1 id="room-title"><span class="t0">블랙</span> <span class="vs">vs</span> <span class="t1">화이트</span></h1></div></header>
+ <div class="share"><button type="button" id="share" class="ghost">초대 링크 보내기</button><span id="conn" class="conn" role="status">연결 중…</span></div>
+ <div class="me-pick">
+  <h2>나는 누구? <small>내 선수 카드를 고르면 그 능력치로 뜁니다</small></h2>
+  <select id="card-pick" aria-label="내 선수 카드"><option value="">카드 없이 게스트로 (능력치 60)</option></select>
+ </div>
+ <div class="pitch-pick" id="pitch-pick" aria-label="자리 고르기"></div>
+ <p class="hint">빈 자리를 눌러 앉으세요. 다시 누르면 일어납니다. 비어 있는 자리는 AI가 뜁니다.</p>
+ <div class="spectators" id="spectators"></div>
+ <div class="options" id="host-options">
+  <fieldset><legend>인원</legend><div class="seg" id="size"><button type="button" data-v="5" class="on">5대5</button><button type="button" data-v="6">6대6</button><button type="button" data-v="7">7대7</button></div></fieldset>
+  <fieldset><legend>경기 시간</legend><div class="seg" id="duration"><button type="button" data-v="180">3분</button><button type="button" data-v="300" class="on">5분</button><button type="button" data-v="420">7분</button><button type="button" data-v="600">10분</button></div></fieldset>
+ </div>
+ <button type="button" id="kickoff" class="start">킥오프</button>
+ <p class="lobby-status" id="room-status" role="status"></p>
+ <details class="howto"><summary>조작 방법</summary>
+  <div class="howto-grid"><div><h3>휴대폰 (가로 화면)</h3><p>왼쪽 아래 스틱으로 이동, 오른쪽 버튼으로 패스·슛·달리기. 슛은 길게 누를수록 세게. 공이 없을 때 슛 버튼은 태클입니다.</p></div>
+  <div><h3>키보드</h3><p>방향키 이동 · S 패스 · D 슛(길게 눌러 세기), 수비 때는 태클 · E 또는 Shift 질주. 한글 입력 상태여도 작동합니다.</p></div></div>
+  <p class="note">온라인에서는 내 선수가 바뀌지 않습니다. 자리(포지션)를 지키면서 패스로 풀어 가세요. 3초 넘게 조작이 없으면 잠시 AI가 대신 뜁니다.</p>
+ </details>
+</section>
+
+<section id="hud" hidden>
+ <div class="scoreboard"><span class="team home"><b class="t0">블랙</b></span><span class="score"><b id="score-home">0</b><i>:</i><b id="score-away">0</b></span><span class="team away"><b class="t1">화이트</b></span><span class="clock" id="clock">05:00</span></div>
+ <span class="net" id="net"></span>
+ <div class="me" id="me" aria-live="polite"></div>
+ <div class="banner" id="banner" role="status"></div>
+ <div class="power" id="power"><i></i></div>
+ <div class="touch" id="touch">
+  <div class="stick" id="stick"><div class="knob" id="knob"></div></div>
+  <div class="buttons"><button type="button" class="b sprint" data-btn="sprint">달리기</button><button type="button" class="b pass" data-btn="pass"><span data-label-pass>패스</span></button><button type="button" class="b shoot" data-btn="shoot"><span data-label-shoot>슛</span></button></div>
+ </div>
+</section>
+
+<section id="rotate" class="rotate" hidden aria-live="polite"><div class="rotate-card"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="22" y="8" width="20" height="36" rx="4"/><path d="M14 50c6 6 22 8 34 0M44 46l4 4-5 3"/></svg><strong>휴대폰을 가로로 돌려주세요</strong><small>경기는 계속 진행 중이에요. 돌리면 바로 조종할 수 있습니다.</small></div></section>
+<section id="result" class="overlay" hidden><div class="card"><p class="eyebrow">FULL TIME</p><h2 id="result-title">경기 종료</h2><div class="final" id="final"></div><dl class="match-stats" id="match-stats"></dl><ul class="scorers" id="scorers"></ul><button type="button" id="again" class="start">한 번 더</button><button type="button" id="to-room">로비로</button><p class="lobby-status" id="result-wait"></p></div></section>
+<noscript><p class="lobby-status">이 게임은 자바스크립트가 필요합니다.</p></noscript>
+<script src="futsal/core.js?v=2"></script>
+<script type="module" src="futsal/league.js?v=2"></script>
+</body></html>

@@ -1,0 +1,31 @@
+name: CI
+
+# PR을 올리거나 main에 합칠 때마다 자동으로 테스트와 빌드를 돌립니다.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: 테스트 + 빌드
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+          cache: npm
+      - run: npm ci
+      - name: 테스트 (npm test)
+        run: npm test
+      - name: 빌드 확인 (npm run build)
+        run: npm run build

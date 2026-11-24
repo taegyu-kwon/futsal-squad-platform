@@ -1,0 +1,8 @@
+.admin-account-link{background:none;border:0;color:#a8b398;font:inherit;font-size:12px;padding:12px;cursor:pointer}
+.admin-auth-dialog{width:min(420px,calc(100vw - 32px));max-height:calc(100dvh - 40px);overflow:auto;margin:auto;padding:28px;background:#192215;color:#f3f5ed;border:1px solid #465538;border-radius:22px}
+.admin-auth-dialog::backdrop{background:#080d09cc}
+.admin-auth-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.admin-auth-heading h2{margin:0;font-size:24px}.admin-auth-close{border:0;background:none;color:inherit;font-size:32px;cursor:pointer}
+.admin-auth-dialog p{color:#a8b398;font-size:14px;line-height:1.6}.admin-auth-dialog label{display:block;margin-top:18px;font-size:14px}
+.admin-auth-dialog input{display:block;box-sizing:border-box;width:100%;margin-top:8px;padding:13px;background:#10180d;color:#fff;border:1px solid #465538;border-radius:10px;font-size:16px}
+.admin-auth-dialog .admin-auth-error{color:#ffb4a9;min-height:22px}.admin-auth-dialog [type=submit]{width:100%;padding:14px;border-radius:12px;background:#c3f85c;color:#17220d;font-weight:700}

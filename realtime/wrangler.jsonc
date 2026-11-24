@@ -1,0 +1,14 @@
+// 흑표범 리그 realtime server (Cloudflare Workers free plan + one SQLite-backed Durable Object per room).
+// Build the static files first: npm run build:league (copies the page, three.js and court art into realtime/public).
+{
+  "name": "futsal-league-online",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-11-01",
+  "workers_dev": true,
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": ["/api/*", "/"] },
+  "durable_objects": { "bindings": [{ "name": "ROOMS", "class_name": "LeagueRoom" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["LeagueRoom"] }],
+  // read-only: the club roster comes from the main app's public snapshot (GET /api/shared)
+  "vars": { "ROSTER_URL": "http://127.0.0.1:4195/api/shared" },
+  "observability": { "enabled": true }
+}

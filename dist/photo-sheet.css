@@ -1,0 +1,10 @@
+/* Photo editor: independently scrolling content with reserved action space. */
+#modal.photo-editor-modal[open]{display:flex;flex-direction:column;height:min(900px,calc(100dvh - max(12px,env(safe-area-inset-top))));max-height:calc(100dvh - max(12px,env(safe-area-inset-top)));padding:0;overflow:hidden}
+#modal.photo-editor-modal::before{flex:0 0 4px;margin:10px auto 0}
+#modal.photo-editor-modal>.modal-heading{position:relative;top:auto;flex:0 0 auto;margin:0;padding:12px 20px;background:#1b2517;border-bottom:1px solid #35452c;z-index:2}
+.photo-editor-scroll{flex:1 1 auto;min-height:0;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch;padding:18px 20px 20px;scroll-padding:16px;touch-action:pan-y}
+.photo-editor-scroll>.prototype-note{margin-bottom:0}
+#modal.photo-editor-modal>.photo-apply-actions{position:relative;bottom:auto;flex:0 0 auto;z-index:2;margin:0;padding:12px 20px max(16px,env(safe-area-inset-bottom));background:#1b2517;border-top:1px solid #405334;box-shadow:0 -6px 16px #111a1022;gap:10px}
+#modal.photo-editor-modal>.photo-apply-actions>.btn{min-height:48px;min-width:0}
+#modal.photo-editor-modal #photo-crop{touch-action:none}
+@media(max-width:360px){#modal.photo-editor-modal>.modal-heading{padding:10px 16px}.photo-editor-scroll{padding:16px}.photo-zoom-tools button:last-child{margin-left:0;padding:0 10px}#photo-adjustments.photo-zoom-tools{gap:6px}#modal.photo-editor-modal>.photo-apply-actions{padding-left:16px;padding-right:16px}}

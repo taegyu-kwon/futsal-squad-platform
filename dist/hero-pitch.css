@@ -1,0 +1,11 @@
+/* Full, proportionate pitch illustration with clear space for the action. */
+.mobile-hero{min-height:374px;padding:24px 22px;background:radial-gradient(ellipse at 75% 62%,#34533a 0,transparent 61%),linear-gradient(145deg,#1c2c20,#15251c 80%);border-color:#425a3c;box-shadow:inset 0 1px 0 #c8e7ab0c}
+.mobile-hero>div:first-child{position:static}
+.mobile-hero .eyebrow,.mobile-hero h2{position:relative;z-index:2}
+.mobile-hero h2{font-size:46px;line-height:.96;margin:14px 0 0;letter-spacing:-.5px}
+.mobile-hero .btn{position:absolute;left:22px;bottom:21px;z-index:3;padding:11px 15px;min-height:42px;box-shadow:0 4px 18px #0002}
+.mobile-hero-art{inset:133px 0 auto;width:100%;height:219px;opacity:1;transform:none;pointer-events:none;z-index:1}
+.mobile-hero-art>img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 2px 1px #0001)}
+.mobile-hero .hero-serial{right:22px;bottom:35px;color:#a2b59b;z-index:2;font-size:9px;letter-spacing:1.2px}
+@media(min-width:430px){.mobile-hero{min-height:409px}.mobile-hero-art{top:129px;height:261px}.mobile-hero h2{font-size:50px}}
+@media(max-width:360px){.mobile-hero{min-height:350px;padding:22px 18px}.mobile-hero h2{font-size:42px}.mobile-hero-art{top:126px;height:198px}.mobile-hero .btn{left:18px;bottom:19px}.mobile-hero .hero-serial{right:18px;bottom:33px;font-size:8px}}

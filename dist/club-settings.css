@@ -1,0 +1,32 @@
+.club-edit-button{display:flex;margin:20px auto 0;min-height:44px;padding:10px 22px}
+.club-identity h2,.club-identity p,.club-motto p,.team strong{overflow-wrap:anywhere}
+.club-identity .crest,.club-settings-preview .crest{font-size:25px}
+.club-settings-preview{display:flex;flex-direction:column;align-items:center;gap:9px;padding:22px 16px;margin:18px 0;background:radial-gradient(ellipse at top,#3b5029,#1b2717 90%);border:1px solid #415734;border-radius:14px;text-align:center}
+.club-settings-preview .crest{width:54px;height:63px}
+.club-settings-preview strong{font-size:19px;overflow-wrap:anywhere;max-width:100%}
+.club-settings-preview small{color:#a5b796;overflow-wrap:anywhere;max-width:100%}
+.header-club{min-width:0}.header-club .live-dot{flex-shrink:0}.club-header-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:140px}
+#club-settings-form input,#club-settings-form textarea{font-size:16px}
+#club-settings-form .field{min-width:0}
+@media(max-width:380px){.club-header-name{max-width:85px}}
+/* Uploaded logos keep their transparency and are not clipped to the fallback shield. */
+.crest.club-image,.mini-crest.club-image{background:none!important;clip-path:none!important;border:0!important;box-shadow:none!important;aspect-ratio:1;height:auto;display:grid;place-items:center;padding:0}
+.club-image img{display:block;width:100%;height:100%;object-fit:contain}
+.club-identity .crest.club-image{width:88px;height:88px}
+.club-settings-preview [data-club-preview="emblem"].club-image{width:112px;height:112px}
+.club-image-picker{display:flex;align-items:center;gap:14px;flex-wrap:wrap;position:relative}
+.club-image-picker .btn{cursor:pointer;min-height:44px}
+#club-image-file{position:absolute;width:1px;height:1px;padding:0;opacity:0;overflow:hidden}
+.club-image-picker:focus-within .btn{outline:2px solid var(--lime);outline-offset:3px}
+.club-image-picker [hidden],#club-image-controls[hidden]{display:none!important}
+#club-image-controls{border:1px solid #415734;border-radius:12px;padding:16px;margin:14px 0 22px}
+.club-crop-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px;font-size:13px}
+.club-crop-field{display:block;margin-top:14px;font-size:12px;color:#b3c3a7}
+.club-crop-field output{float:right;font-variant-numeric:tabular-nums;color:#e2ebd9}
+#club-settings-form .club-crop-field input{display:block;width:100%;min-height:30px;margin:6px 0 0;accent-color:var(--lime);padding:0}
+#club-settings-form .field small{display:block;margin:5px 0 0;line-height:1.6}
+#club-settings-form button:disabled{opacity:.45;cursor:wait}
+
+.brand-emblem{width:34px;height:34px;object-fit:contain;flex-shrink:0}.brand{display:flex;align-items:center;gap:8px}
+
+.brand,.mobile-brand{min-width:0}.brand-name{display:block;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:24px;line-height:1.15;padding-right:.15em}.mobile-brand .brand-name{font-size:21px}

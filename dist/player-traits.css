@@ -1,0 +1,28 @@
+/* Injury tag: medical cross block + dark bar with a crimson rail, portrait dimmed. Static, no animation. */
+.player-card .card-injury-badge{
+ position:absolute;z-index:4;top:53%;left:50%;width:82%;box-sizing:border-box;transform:translate(-50%,-50%);
+ display:flex;align-items:stretch;pointer-events:none;color:#f3f1ee;text-shadow:none;
+ background:linear-gradient(180deg,#141414f2,#070707f2);border-top:.5cqw solid #d23a3a;box-shadow:0 1.6cqw 4cqw #000c;
+}
+.card-injury-badge::before{
+ content:'';flex:none;width:13cqw;background:
+  linear-gradient(#fff,#fff) center/2.6cqw 8cqw no-repeat,
+  linear-gradient(#fff,#fff) center/8cqw 2.6cqw no-repeat,
+  linear-gradient(180deg,#d8383a,#a3191d);
+}
+.card-injury-badge::after{content:'';position:absolute;left:0;right:0;bottom:-.5cqw;height:.5cqw;background:linear-gradient(90deg,#a3191d,#a3191d00 70%)}
+.card-injury-badge .card-injury-word{flex:1;display:flex;align-items:center;justify-content:space-between;gap:2cqw;padding:2.2cqw 3.4cqw;white-space:nowrap;font:800 9.6cqw/1 'Noto Sans KR',sans-serif;letter-spacing:.14em}
+.card-injury-word::after{content:'INJURED';font:700 4.6cqw/1 'Barlow Condensed',sans-serif;letter-spacing:.24em;color:#ff7b74}
+.player-card:has(.card-injury-badge) .card-person{filter:grayscale(.85) brightness(.6) contrast(1.08)}
+/* The reveal shows the player at full strength: no injury marking there. */
+#card-reveal .card-injury-badge{display:none}
+#card-reveal .player-card:has(.card-injury-badge) .card-person{filter:none}
+.player-traits-panel{margin:22px 0;padding:20px;border:1px solid #39492f;border-radius:14px;background:#141e11}
+.player-traits-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.player-traits-panel h3{margin:0;font-size:14px;color:#e1e9d8}.player-traits-heading .text-btn{min-height:44px;color:#c4f466;font-size:12px}
+.player-availability{display:inline-flex;align-items:center;gap:8px;margin-top:8px;font-size:13px;color:#c7d7b9}.availability-dot{width:7px;height:7px;border-radius:50%;background:#afd66a}.player-availability.is-injured{color:#ffb5a7}.is-injured .availability-dot{background:#e97565}
+.player-traits-panel .player-traits-title{border-top:1px solid #304128;margin-top:19px;padding-top:19px}
+.player-trait-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:13px 0 0}.player-trait-tags li{padding:7px 11px;border:1px solid #4b6037;border-radius:7px;background:#26351e;color:#d4ecb7;font-size:12px;line-height:1.5;max-width:100%;overflow-wrap:anywhere}
+.player-traits-empty,.traits-editor-help{font-size:12px;color:#9bac8e;line-height:1.8;margin:12px 0 0}.traits-editor-name{font-size:20px;font-weight:700;margin:14px 0 24px}.traits-editor-name span{font-size:14px;color:#c4f466;margin-left:8px}
+#player-traits-form .field{margin-top:22px}#player-traits-form select,#player-traits-form textarea{width:100%;font-size:16px;line-height:1.6}#player-traits-form textarea{resize:vertical;min-height:160px}
+html[data-shared-readonly=true] [data-action=player-traits-edit]{display:none!important}

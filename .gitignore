@@ -1,0 +1,11 @@
+node_modules/
+.env*
+!.env.example
+.vercel/
+public/
+dist/server/
+dist/.openai/
+backups/
+.vercel
+.wrangler/
+realtime/node_modules/

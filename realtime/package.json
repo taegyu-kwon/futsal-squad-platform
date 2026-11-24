@@ -1,0 +1,11 @@
+{
+  "name": "futsal-league-online",
+  "private": true,
+  "scripts": {
+    "dev": "node ../scripts/build-league.mjs && wrangler dev",
+    "deploy": "node ../scripts/build-league.mjs && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.166.0"
+  }
+}

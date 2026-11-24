@@ -1,0 +1,6 @@
+Third-party code and assets
+
+- three.js (dist/vendor/three): MIT License, see dist/vendor/three/LICENSE.
+- MediaPipe Tasks Vision (dist/vendor/mediapipe): Apache License 2.0.
+- Player card frame, reveal plate videos, pitch illustration and team emblem were made for this project.
+- dist/assets/korea-flag.png: national flag of the Republic of Korea (public domain design).

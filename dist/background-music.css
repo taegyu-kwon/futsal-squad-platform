@@ -1,0 +1,5 @@
+.top-actions .music-toggle{width:36px;height:36px;padding:7px;flex:0 0 36px;border:1px solid #4c5e3d;border-radius:50%;background:#1b2717;color:#9faf92}
+.music-toggle svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
+.music-toggle .music-waves{display:none}.music-toggle.is-playing{color:#c4f466;border-color:#789641;background:#283a1c}.music-toggle.is-playing .music-waves{display:block}.music-toggle.is-playing .music-muted{display:none}
+.music-toggle.is-loading{border-style:dashed}
+@media(max-width:400px){.top-actions{gap:8px}.topbar{gap:8px}.top-actions .music-toggle{width:32px;height:32px;flex-basis:32px;padding:5px}}

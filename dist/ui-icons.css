@@ -1,0 +1,4 @@
+/* Icons use vector paths so mobile platforms cannot substitute emoji. */
+svg.ui-direction{display:inline-block;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle;flex-shrink:0}
+.rating-star>span,.rating-star>i{display:block;height:25px}
+.rating-star svg{display:block;width:22px;height:25px;max-width:none;fill:currentColor;stroke:none}

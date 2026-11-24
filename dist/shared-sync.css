@@ -1,0 +1,7 @@
+#shared-banner{margin:12px 18px 0;padding:12px 14px;border:1px solid #455b32;border-radius:10px;background:#1c2b17;color:#c7d9b7;font-size:11px;line-height:1.7;display:flex;flex-wrap:wrap;gap:8px;align-items:center}#shared-banner>span{flex:1;min-width:180px}#shared-banner button,#shared-banner a{display:inline-block;padding:8px 10px;border:1px solid #75934b;border-radius:7px;color:#d1f5a1;background:#2b3d20;font-size:11px;cursor:pointer}
+html[data-shared-readonly=true] :is(.pilot-card-edit,.player-photo-actions,[data-action=pilot-edit],[data-action=player-info-edit],[data-action=club-settings],[data-action=create-match],[data-action=record-match],[data-action=save-tactics],[data-action=squad-template-save],#review-form button[type=submit]){display:none!important}
+html[data-shared-readonly=true] .pilot-roster-note{display:none}
+
+#shared-banner[hidden]{display:none!important}
+
+html[data-shared-readonly="true"] :is([data-action="squad-save"],[data-action="squad-template-update"],[data-action="squad-template-delete"],[data-action="squad-template-undo"]){display:none!important}
